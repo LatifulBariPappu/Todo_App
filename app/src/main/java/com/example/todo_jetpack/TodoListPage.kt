@@ -1,6 +1,7 @@
 package com.example.todo_jetpack
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -40,7 +41,11 @@ fun TodoListPage(){
             .fillMaxSize()
             .padding(8.dp)
     ){
-        Row {
+        Row (
+            modifier = Modifier.fillMaxSize()
+                .padding(8.dp),
+            horizontalArrangement = Arrangement.SpaceEvenly
+        ){
             OutlinedTextField(value = inputText, onValueChange = {
                 inputText = it
             })
